@@ -11,13 +11,13 @@ pipeline {
 
         stage('Tag Docker Image') {
             steps {
-                sh 'docker tag devops-node-app p565656/devops-node-app'
+                sh 'docker tag devops-node-app p565656/devops-node-app:latest'
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push p565656/devops-node-app'
+                sh 'docker push p565656/devops-node-app:latest'
             }
         }
 
