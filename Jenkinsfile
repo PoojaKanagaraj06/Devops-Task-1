@@ -8,7 +8,12 @@ pipeline {
                 sh 'docker build -t devops-node-app ./app'
             }
         }
-
+       stage('Push Docker Image') {
+            steps {
+                sh ' docker tag devops-node-app p565656/devops-node-app'
+                sh 'docker push  p565656/devops-node-app'
+            }
+        }
         stage('Run Docker Container') {
             steps {
                 sh 'docker run -d -p 3000:3000 devops-node-app'
