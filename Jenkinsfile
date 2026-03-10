@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Build Docker Image') {
+        stage('Build Docker Image') { 
             steps { 
                 sh 'docker build -t devops-node-app ./app'
             }
